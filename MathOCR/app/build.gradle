@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.softprojekat.nenad.mathocr"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile project(':libraries:tess-two')
+    compile project(':openCVLibrary310')
+    compile files('C:/Users/Nenad/AndroidStudioProjects/MathOCR/libraries/commons-codec-1.3.jar')
+    compile files('C:/Users/Nenad/AndroidStudioProjects/MathOCR/libraries/httpclient-4.0.1.jar')
+    compile files('C:/Users/Nenad/AndroidStudioProjects/MathOCR/libraries/httpcore-4.0.1.jar')
+    compile files('C:/Users/Nenad/AndroidStudioProjects/MathOCR/libraries/commons-logging-1.2.jar')
+    compile files('C:/Users/Nenad/AndroidStudioProjects/MathOCR/libraries/WolframAlpha-1.1.jar')
+}
